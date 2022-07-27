@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categoria" representedClassName=".Categoria" syncable="YES" codeGenerationType="class">
+        <attribute name="nome" attributeType="String"/>
+        <relationship name="contatos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contato" inverseName="recebeCategoria" inverseEntity="Contato"/>
+    </entity>
+    <entity name="Contato" representedClassName=".Contato" syncable="YES" codeGenerationType="class">
+        <attribute name="nome" attributeType="String"/>
+        <attribute name="numero" attributeType="String"/>
+        <relationship name="recebeCategoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="contatos" inverseEntity="Categoria"/>
+    </entity>
+    <elements>
+        <element name="Contato" positionX="172.2916259765625" positionY="23.08706665039062" width="128" height="88"/>
+        <element name="Categoria" positionX="-54" positionY="9" width="128" height="73"/>
+    </elements>
+</model>
