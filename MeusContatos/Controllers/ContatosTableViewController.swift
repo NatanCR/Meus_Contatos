@@ -28,6 +28,10 @@ class ContatosTableViewController: UITableViewController {
     
     // MARK: - Dados TableView
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
@@ -58,7 +62,6 @@ class ContatosTableViewController: UITableViewController {
         contato.setValue(numero, forKey: "numero")
         contato.recebeCategoria = self.selecionaCategoria
         
-        
         do {
             try context.save()
             self.contatosArray.append(contato)
@@ -67,16 +70,6 @@ class ContatosTableViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
-    
-    //    func salvarContatos() {
-    //        do {
-    //            try context.save()
-    //        } catch {
-    //            print("Erro ao salvar context \(error)")
-    //        }
-    //
-    //        self.tableView.reloadData()
-    //    }
     
     //Editar
     func editarContato(indexPath: IndexPath, nome: String, numero: String) {
@@ -101,6 +94,7 @@ class ContatosTableViewController: UITableViewController {
     //Carregar
     func carregaContatos(with request: NSFetchRequest<Contato> = Contato.fetchRequest(), predicate: NSPredicate? = nil) {
         let categoriaPredicate = NSPredicate(format: "recebeCategoria.nome MATCHES %@", selecionaCategoria!.nome!)
+        request.sortDescriptors = [NSSortDescriptor(key: "nome", ascending: true)]
         
         if let adicionaPredicate = predicate {
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoriaPredicate, adicionaPredicate])

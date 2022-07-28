@@ -49,6 +49,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Minhas Categorias" id="fJJ-FB-8rv">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="d1o-KG-j65"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vYL-ha-5vX">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -131,7 +132,6 @@
         <!--Navigation Controller-->
         <scene sceneID="odH-H9-p15">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ppc-uR-VvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="ooH-1A-YEI" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tdD-02-JxC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -141,6 +141,7 @@
                         <segue destination="QQl-3k-8Jr" kind="relationship" relationship="rootViewController" id="goe-b1-a13"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppc-uR-VvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="935" y="609"/>
         </scene>
@@ -257,10 +258,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6f-IP-zcT">
-                                <rect key="frame" x="166" y="754" width="210" height="88"/>
+                                <rect key="frame" x="107" y="736" width="201" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="5cy-qQ-uka"/>
-                                    <constraint firstAttribute="height" constant="88" id="XES-fg-QkG"/>
+                                    <constraint firstAttribute="width" constant="201" id="yDN-uf-XbJ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Deletar Contato">
@@ -276,27 +276,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rH7-Vx-CfE" firstAttribute="trailing" secondItem="lqY-Yu-V0t" secondAttribute="trailing" constant="20" id="02C-5p-hqn"/>
-                            <constraint firstItem="a6f-IP-zcT" firstAttribute="leading" secondItem="rH7-Vx-CfE" secondAttribute="leading" constant="166" id="CMF-IP-6LX"/>
+                            <constraint firstItem="a6f-IP-zcT" firstAttribute="leading" secondItem="rH7-Vx-CfE" secondAttribute="leading" constant="107" id="C15-eO-Eio"/>
                             <constraint firstItem="rH7-Vx-CfE" firstAttribute="trailing" secondItem="GR2-It-4tL" secondAttribute="trailing" constant="20" id="HP4-0t-GKn"/>
-                            <constraint firstItem="rH7-Vx-CfE" firstAttribute="trailing" secondItem="a6f-IP-zcT" secondAttribute="trailing" constant="38" id="SI9-Jx-nbm"/>
                             <constraint firstItem="lqY-Yu-V0t" firstAttribute="top" secondItem="rH7-Vx-CfE" secondAttribute="top" constant="70" id="X4s-yE-gvc"/>
                             <constraint firstItem="qHO-Qt-sXx" firstAttribute="leading" secondItem="rH7-Vx-CfE" secondAttribute="leading" constant="20" id="Zdm-wB-ghF"/>
                             <constraint firstItem="lqY-Yu-V0t" firstAttribute="leading" secondItem="rH7-Vx-CfE" secondAttribute="leading" constant="20" id="gPH-hj-pCS"/>
                             <constraint firstItem="GR2-It-4tL" firstAttribute="top" secondItem="lqY-Yu-V0t" secondAttribute="bottom" constant="50" id="gWM-FZ-WBT"/>
-                            <constraint firstItem="rH7-Vx-CfE" firstAttribute="bottom" secondItem="a6f-IP-zcT" secondAttribute="bottom" constant="20" id="oDw-gu-cIE"/>
+                            <constraint firstItem="rH7-Vx-CfE" firstAttribute="bottom" secondItem="a6f-IP-zcT" secondAttribute="bottom" constant="83" id="nOV-XG-1Jt"/>
+                            <constraint firstItem="rH7-Vx-CfE" firstAttribute="trailing" secondItem="a6f-IP-zcT" secondAttribute="trailing" constant="106" id="qEC-1q-8w4"/>
                             <constraint firstItem="qHO-Qt-sXx" firstAttribute="top" secondItem="lqY-Yu-V0t" secondAttribute="bottom" constant="50" id="ubR-oG-9A1"/>
                             <constraint firstItem="GR2-It-4tL" firstAttribute="leading" secondItem="qHO-Qt-sXx" secondAttribute="trailing" constant="8" id="vQe-Zx-dax"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contato" id="T6b-4E-0Hz">
                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="lBc-Iw-Xwh">
-                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="voltar:" destination="QQl-3k-8Jr" id="iko-V0-rZb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Editar" id="P2S-ou-X3U">
-                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <segue destination="NoU-dn-QFw" kind="presentation" identifier="editarContatoSegue" id="0j5-0u-DpB"/>
                             </connections>
@@ -315,12 +313,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Z06-Kh-NCi"/>
+        <segue reference="0j5-0u-DpB"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
