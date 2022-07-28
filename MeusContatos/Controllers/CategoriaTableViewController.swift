@@ -20,7 +20,7 @@ class CategoriaTableViewController: UITableViewController {
         carregaCategorias()
     }
 
-    // MARK: - Table view data source
+    // MARK: - Dados TableView
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -33,6 +33,52 @@ class CategoriaTableViewController: UITableViewController {
         cell.textLabel?.text = categorias[indexPath.row].nome
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //Excluir a categoria
+        let acaoDeletar = UIContextualAction(style: .destructive, title: "Excluir") { action, view, boolAction in
+            let categoria = self.categorias[indexPath.row]
+            
+            self.deletar(categoria, at: indexPath)
+            
+            tableView.performBatchUpdates {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } completion: { completed in
+                tableView.reloadData()
+            }
+        }
+        
+        //Editar a categoria
+        let acaoEditar = UIContextualAction(style: .normal, title: nil) { action, view, boolAction in
+            var textField = UITextField()
+            
+            let alert = UIAlertController(title: "Editar categoria", message: "", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Concluir", style: .default) { (action) in
+                
+                
+                let nomeEditado = textField.text!
+                
+                self.editarCategoria(indexPath: indexPath, nome: nomeEditado)
+                tableView.reloadData()
+                
+            }
+            
+            alert.addAction(action)
+            
+            alert.addTextField { (field) in
+                textField = field
+                textField.placeholder = "Editar categoria"
+            }
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        acaoEditar.image = UIImage(systemName: "pencil")
+        
+        return UISwipeActionsConfiguration(actions: [acaoDeletar, acaoEditar])
     }
     
     //MARK: - Métodos delegate
@@ -52,6 +98,23 @@ class CategoriaTableViewController: UITableViewController {
     }
     
     //MARK: - Manipula os dados
+    
+    func editarCategoria(indexPath: IndexPath, nome: String) {
+        let categoria = categorias[indexPath.row]
+        categoria.setValue(nome, forKey: "nome")
+        
+        do {
+            try context.save()
+            categorias[indexPath.row] = categoria
+        } catch {
+            print("Erro ao editar \(error)")
+        }
+    }
+    
+    func deletar(_ categoria: Categoria, at indexPath: IndexPath) {
+        context.delete(categoria)
+        categorias.remove(at: indexPath.row)
+    }
     
     func salvarCategorias() {
         do {

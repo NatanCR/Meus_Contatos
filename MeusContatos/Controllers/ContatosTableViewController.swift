@@ -26,8 +26,11 @@ class ContatosTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    // MARK: - Table view data source
+    // MARK: - Dados TableView
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contatosArray.count
@@ -150,7 +153,7 @@ class ContatosTableViewController: UITableViewController {
     
 }
 
-//MARK: - Search bar methods
+//MARK: - Métodos da SearchBar
 //separa e estende a capacidade do controlador para lidar com métodos de pesquisa
 extension ContatosTableViewController: UISearchBarDelegate {
     //função de pesquisa

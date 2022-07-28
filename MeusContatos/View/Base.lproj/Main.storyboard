@@ -81,7 +81,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContatoCell" textLabel="zau-Yi-4n9" detailTextLabel="F66-gi-J70" style="IBUITableViewCellStyleValue1" id="fuh-2G-5t3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="13" reuseIdentifier="ContatoCell" textLabel="zau-Yi-4n9" detailTextLabel="F66-gi-J70" style="IBUITableViewCellStyleValue1" id="fuh-2G-5t3">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fuh-2G-5t3" id="ePe-y5-mcz">
