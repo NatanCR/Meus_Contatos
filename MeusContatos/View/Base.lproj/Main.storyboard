@@ -117,7 +117,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Meus Contatos" id="g4N-2B-1mL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="78x-1V-4hF">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="adicionaContato:" destination="tEL-gj-9Eg" id="pzD-nM-PT7"/>
                                 <segue destination="NoU-dn-QFw" kind="presentation" id="Z06-Kh-NCi"/>
@@ -316,6 +316,9 @@
         <segue reference="0j5-0u-DpB"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
