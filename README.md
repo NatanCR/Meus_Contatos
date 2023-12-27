@@ -1,6 +1,6 @@
 # Meus_Contatos
-Aplicativo de agenda de contatos desenvolvido em linguagem Swift. 
+Contact list application developed in Swift language. 
 
-Projeto da Apple Academy Developer proposto para aplicar prova de conceito de alguma tecnologia de escolha pessoal e desenvolver um aplicativo.
+Apple Academy Developer project proposed to apply proof of concept of a technology of personal choice and develop an application.
 
-Desenvolvi um aplicativo de agenda de contatos usando Core Data para a persintência dos dados, dentro do aplicativo é possível criar categorias para separar onde vai salvar cada contato e depois criar, visualizar, editar e deletar seus contatos telefônicos. 
+I developed a contact list application using Core Data for data persistence. Within the application you can create categories to separate where you will save each contact and then create, view, edit and delete your phone contacts. 
